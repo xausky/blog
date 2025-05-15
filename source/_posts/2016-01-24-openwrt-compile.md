@@ -6,7 +6,7 @@ tags:
 categories:
   - hobby
 toc: false
-thumbnail: '/images/irx3wrkgxs48rtxyhhrv.jpg'
+thumbnail: https://b2.xac.one/2025/05/b688700636519fa694a9992e45f341a6.jpg
 date: 2016-01-24 23:05:20
 ---
 

@@ -7,7 +7,7 @@ tags:
 categories:
   - work
 toc: false
-thumbnail: '/images/n6dfvysylorglglec5si.jpg'
+thumbnail: https://b2.xac.one/2025/05/4b621c2eea3db7a08d90b563e56b7023.jpg
 date: 2018-08-14 13:44:54
 ---
 
