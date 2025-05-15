@@ -8,7 +8,7 @@ tags:
 categories:
   - work
 toc: false
-thumbnail: https://b2.xac.one/2025/05/527fbe374045bce4328795802c3d19f8.jpg
+thumbnail: https://b2.xac.one/2025/05/11fd238c5fcd1085bd78cf46dd766300.webp
 date: 2019-08-22 15:57:26
 ---
 
@@ -20,7 +20,7 @@ date: 2019-08-22 15:57:26
 
 断点下到 org.springframework.security.web.FilterChainProxy#FilterChainProxy 就可以在启动后看到所有的 Filter Chain 。
 
-![Debug](https://b2.xac.one/2025/05/3c413e1c6b10635c1eb7e01217f3945c.png)
+![Debug](https://b2.xac.one/2025/05/15cdcf61b1cd618411e59c59bdf84d2e.webp)
 
 对比正常设想或者环境的不同可以找到问题所在，这里对比正常环境是多了一条 Filter Chian 也就是第一条，那么就可以找到入手点再调试多出来的 Filter Chian 是如何产生的，有没有禁用办法。
 
@@ -28,6 +28,6 @@ date: 2019-08-22 15:57:26
 
 上一步调试发现多出来的是 DefaultSecurityFilterChain ，继续下断点到其构造函数，重启查看调用链。
 
-![Filter Debug](https://b2.xac.one/2025/05/7b897050aab352adbbf8a9cb7f7f4022.png)
+![Filter Debug](https://b2.xac.one/2025/05/77422d1e6cf551ba65fbf553a2ea1f92.webp)
 
 找到构造函数的调用链观察到红色箭头部分是 WebSecurityConfiguration 也就是说这个链是由 SecurityConfigurer 配置来的，跳到对应栈，找到多余的 SecurityConfigurer 为测试类中多加的一个 Security 配置，在分析功能后成功解决问题。
